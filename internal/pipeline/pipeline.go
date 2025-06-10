@@ -44,7 +44,7 @@ func LogReader(ctx context.Context, wg *sync.WaitGroup, file *os.File, processLo
 
 			processLog.AddErrorLine(processlog.ErrorLogLine{
 				FullLine: scanner.Text(),
-				Err:      fmt.Sprintf("ошибка %v", ctx.Err()),
+				Err:      fmt.Sprintf("ошибка %v", err),
 			})
 		}
 	}()
