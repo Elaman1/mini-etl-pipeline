@@ -17,6 +17,7 @@ func Init(ctx context.Context, logFileName string, processLog *processlog.Proces
 	if err != nil {
 		return fmt.Errorf("не удалось открыть файл %v", err)
 	}
+	defer logFile.Close()
 
 	// Будем создавать 3 цепочки пайплайна
 	wg := &sync.WaitGroup{}
